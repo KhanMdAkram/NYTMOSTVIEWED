@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "hud.veizon.com.myapplication"
+        applicationId "com.nyt.mostviewed"
         minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
@@ -36,4 +36,5 @@ dependencies {
     compile 'com.google.code.gson:gson:2.7'
     compile 'com.squareup.picasso:picasso:2.5.2'
     testImplementation 'junit:junit:4.12'
+    compile 'com.android.support.test:runner:0.2'
 }
