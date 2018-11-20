@@ -50,6 +50,6 @@ public class MostViewedResponse implements Serializable {
 
     @Override
     public String toString() {
-        return "ClassPojo [results = " + results + ", status = " + status + ", num_results = " + num_results + ", copyright = " + copyright + "]";
+        return "MostViewedResponse [results = " + results + ", status = " + status + ", num_results = " + num_results + ", copyright = " + copyright + "]";
     }
 }

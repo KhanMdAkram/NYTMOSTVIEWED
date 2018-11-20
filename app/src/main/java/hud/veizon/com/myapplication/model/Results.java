@@ -1,5 +1,7 @@
 package hud.veizon.com.myapplication.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 /**
@@ -7,15 +9,13 @@ import java.util.List;
  */
 
 public class Results {
-    //private String abstract;
+
+    @SerializedName("abstract")
+    private String abstract_title;
 
     private String published_date;
 
     private String asset_id;
-
-    //private String geo_facet;
-
-    //private String[] per_facet;
 
     private String type;
 
@@ -43,15 +43,13 @@ public class Results {
 
     private List<Media> media;
 
-//    public String getAbstract ()
-//    {
-//        return abstract;
-//    }
-//
-//    public void setAbstract (String abstract)
-//    {
-//        this.abstract = abstract;
-//    }
+    public String getAbstract() {
+        return abstract_title;
+    }
+
+    public void setAbstract(String abstract_title) {
+        this.abstract_title = abstract_title;
+    }
 
     public String getPublished_date() {
         return published_date;
@@ -68,22 +66,6 @@ public class Results {
     public void setAsset_id(String asset_id) {
         this.asset_id = asset_id;
     }
-
-//    public String getGeo_facet() {
-//        return geo_facet;
-//    }
-//
-//    public void setGeo_facet(String geo_facet) {
-//        this.geo_facet = geo_facet;
-//    }
-
-//    public String[] getPer_facet() {
-//        return per_facet;
-//    }
-//
-//    public void setPer_facet(String[] per_facet) {
-//        this.per_facet = per_facet;
-//    }
 
     public String getType() {
         return type;
@@ -157,14 +139,6 @@ public class Results {
         this.views = views;
     }
 
-//    public String[] getOrg_facet() {
-//        return org_facet;
-//    }
-//
-//    public void setOrg_facet(String[] org_facet) {
-//        this.org_facet = org_facet;
-//    }
-
     public String getColumn() {
         return column;
     }
@@ -191,6 +165,6 @@ public class Results {
 
     @Override
     public String toString() {
-        return "ClassPojo [published_date = " + published_date + ", asset_id = " + asset_id + ", type = " + type + ", url = " + url + ", section = " + section + ", des_facet = " + des_facet + ", id = " + id + ", title = " + title + ", byline = " + byline + ", source = " + source + ", views = " + views  + ", column = " + column + ", adx_keywords = " + adx_keywords + ", media = " + media + "]";
+        return "Results [published_date = " + published_date + ", asset_id = " + asset_id + ", type = " + type + ", url = " + url + ", section = " + section + ", des_facet = " + des_facet + ", id = " + id + ", title = " + title + ", byline = " + byline + ", source = " + source + ", views = " + views + ", column = " + column + ", adx_keywords = " + adx_keywords + ", media = " + media + "]";
     }
 }

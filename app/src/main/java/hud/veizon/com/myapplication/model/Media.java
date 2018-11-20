@@ -9,7 +9,7 @@ import java.util.List;
  * Created by akram on 19/11/18.
  */
 
-public class Media implements Serializable{
+public class Media {
     private String subtype;
 
     private String approved_for_syndication;
@@ -72,6 +72,6 @@ public class Media implements Serializable{
 
     @Override
     public String toString() {
-        return "ClassPojo [subtype = " + subtype + ", approved_for_syndication = " + approved_for_syndication + ", caption = " + caption + ", copyright = " + copyright + ", type = " + type + "]";
+        return "Media [subtype = " + subtype + ", approved_for_syndication = " + approved_for_syndication + ", caption = " + caption + ", copyright = " + copyright + ", type = " + type + "]";
     }
 }

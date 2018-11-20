@@ -47,6 +47,6 @@ public class MultiMedia {
 
     @Override
     public String toString() {
-        return "ClassPojo [height = " + height + ", width = " + width + ", format = " + format + ", url = " + url + "]";
+        return "MultiMedia [height = " + height + ", width = " + width + ", format = " + format + ", url = " + url + "]";
     }
 }
