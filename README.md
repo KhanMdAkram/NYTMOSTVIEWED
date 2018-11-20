@@ -5,10 +5,10 @@
  checking for Internet connectivity and handling error cases.
  Code design using MVP.
  
- #Open Source Libraries Used
-   Retrofit 
-   Gson
-   Picasso
+ #Open Source Libraries Used :
+   Retrofit ,
+   Gson,
+   Picasso,
  
  
  
