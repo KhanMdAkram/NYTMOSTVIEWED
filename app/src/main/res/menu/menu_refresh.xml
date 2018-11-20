@@ -6,6 +6,6 @@
         android:id="@+id/action_close"
         android:orderInCategory="100"
         android:title="Refresh"
-        android:icon="@android:drawable/ic_menu_recent_history"
+        android:icon="@drawable/ic_refresh_white_24dp"
         app:showAsAction="always" />
 </menu>
