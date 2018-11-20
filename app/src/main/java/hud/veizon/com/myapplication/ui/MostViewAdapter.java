@@ -25,8 +25,6 @@ import hud.veizon.com.myapplication.model.Results;
 public class MostViewAdapter extends RecyclerView.Adapter<MostViewAdapter.MostViewHolder> {
     private List<Results> mResultsList;
     private Context mContext;
-    private final int VIEW_TYPE_NO_RESULT = 1;
-    private final int VIEW_TYPE_RESULT = 2;
 
     MostViewAdapter(Context context, List<Results> resultsList) {
         mContext = context;

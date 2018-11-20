@@ -79,6 +79,7 @@ public class NytMostPopularActivity extends AppCompatActivity implements IActivi
     @Override
     public void setResultData(List<Results> resultsList) {
         mMostViewedAdapter.setResultsList(resultsList);
+        mBinding.recyclerViews.smoothScrollToPosition(0);
     }
 
     @Override
