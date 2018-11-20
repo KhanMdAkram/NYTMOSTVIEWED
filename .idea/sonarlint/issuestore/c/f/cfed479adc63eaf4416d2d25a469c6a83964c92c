@@ -1,0 +1,30 @@
+
+msquid:S00100@"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Šçá8óÌËäò,
+osquid:S00117D"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿ·r8óÌËäò,
+osquid:CommentedOutCodeLine "<This block of commented-out lines of code should be removed.(”öÂ‡üÿÿÿÿ8¢”áëò,
+isquid:CommentedOutCodeLineP"<This block of commented-out lines of code should be removed.(ÕˆÍŞ8ß£æëò,
+psquid:S00117t"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä½ãŸ8óÌËäò,
+nsquid:CommentedOutCodeLineL"<This block of commented-out lines of code should be removed.(—èıùıÿÿÿÿ8ğ…êëò,
+xsquid:S00116"TRename this field "des_facet" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÙãÕˆşÿÿÿÿ8óÌËäò,
+xsquid:S00116"YRename this field "published_date" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ôë©ÿ8óÌËäò,
+vsquid:S00117´"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(è““áûÿÿÿÿ8óÌËäò,
+rsquid:S001008"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëøòûûÿÿÿÿ8óÌËäò,
+ssquid:S00100°"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ª†°şûÿÿÿÿ8óÌËäò,
+usquid:S00117<"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ÷­Ÿûÿÿÿÿ8óÌËäò,
+nsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÿ¤Ğùÿÿÿÿ8ªøäëò,
+isquid:CommentedOutCodeLine4"<This block of commented-out lines of code should be removed.(Ú°à¬8óÌËäò,
+jsquid:CommentedOutCodeLine¤"<This block of commented-out lines of code should be removed.(Ñ¾‹â8¢”áëò,
+{squid:S00116*"WRename this field "adx_keywords" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆƒ¥úÿÿÿÿ8óÌËäò,
+isquid:CommentedOutCodeLine&"<This block of commented-out lines of code should be removed.(›˜ª 8 ¸àëò,
+nsquid:CommentedOutCodeLineT"<This block of commented-out lines of code should be removed.(Ÿõ«Úşÿÿÿÿ8ß£æëò,
+ssquid:S00100´"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(è““áûÿÿÿÿ8óÌËäò,
+isquid:CommentedOutCodeLine/"<This block of commented-out lines of code should be removed.(Ú°à¬8óÌËäò,
+nsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ç‹éåøÿÿÿÿ8­·éëò,
+rsquid:S00100<"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ÷­Ÿûÿÿÿÿ8óÌËäò,
+nsquid:CommentedOutCodeLine
+"<This block of commented-out lines of code should be removed.(íÃÇâûÿÿÿÿ8óÌËäò,
+msquid:S00100t"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä½ãŸ8óÌËäò,
+rsquid:S00100p"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©Ö˜£úÿÿÿÿ8óÌËäò,
+isquid:CommentedOutCodeLineH"<This block of commented-out lines of code should be removed.(ÁßÑ8ğ…êëò,
+lsquid:S00100D"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿ·r8óÌËäò,
+rsquid:S00116"SRename this field "asset_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(íÒÒ8óÌËäò,

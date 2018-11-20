@@ -1,0 +1,9 @@
+
+Rsquid:S11720"/Remove this unused method parameter "metadata".(Â¹ÚÒùÿÿÿÿ8ò÷Ãíò,
+}squid:S00116"YRename this field "media_metadata" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸Ğñˆÿÿÿÿÿ8ğ²Ãíò,
+psquid:S00117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”îçÃ8ŸÊÏäò,
+Šsquid:S41651"lRemove this useless assignment; "media_metadata" already holds the assigned value along all execution paths.(¹Ó²Å8ò÷Ãíò,
+msquid:S00100 "NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”îçÃ8ŸÊÏäò,
+‚squid:S00116
+"cRename this field "approved_for_syndication" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³¢ıİ8ŸÊÏäò,
+msquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©¯ãï8ŸÊÏäò,

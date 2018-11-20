@@ -1,0 +1,5 @@
+
+]squid:UselessImportCheck"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8†öèìò,
+Ssquid:S1751T"5Remove this "break" statement or make it conditional.(›ûä·8ùçÅìò,
+nsquid:CommentedOutCodeLine]"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8µÑóìò,
+?squid:S1643R"Use a StringBuilder instead.(†ñÁøÿÿÿÿ8ïĞƒíò,

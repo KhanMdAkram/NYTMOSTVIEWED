@@ -1,0 +1,6 @@
+
+lsquid:S00100'"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Áê½G8¦Àòåò,
+rsquid:S00100#"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•ÃÌİıÿÿÿÿ8¦Àòåò,
+osquid:S00117'"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Áê½G8¦Àòåò,
+zsquid:S00116"VRename this field "num_results" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õÎ¦±ÿÿÿÿÿ8¦Àòåò,
+Lsquid:S1948")Make "results" transient or serializable.(íçåêúÿÿÿÿ8š§Ìùò,
