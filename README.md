@@ -6,9 +6,9 @@
  Code design using MVP.
  
  #Open Source Libraries Used
- Retrofit 
- Gson
- Picasso
+ #Retrofit 
+ #Gson
+ #Picasso
  
  
  
