@@ -9,6 +9,13 @@
    Retrofit ,
    Gson,
    Picasso
+   
+   Steps to import project :
+     1.) Open command terminal and runs the below command.
+           git clone https://github.com/KhanMdAkram/NYTMOSTVIEWED.git
+     2.) Open Android Studio and import the project.
+     3.)Build the project and run it.
+     4.) Happy Coding.
  
  
  
