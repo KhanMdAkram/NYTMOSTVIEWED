@@ -8,7 +8,7 @@
  #Open Source Libraries Used :
    Retrofit ,
    Gson,
-   Picasso,
+   Picasso
  
  
  
