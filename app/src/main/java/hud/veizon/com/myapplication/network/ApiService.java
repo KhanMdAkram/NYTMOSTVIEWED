@@ -1,4 +1,4 @@
-package hud.veizon.com.myapplication;
+package hud.veizon.com.myapplication.network;
 
 
 import hud.veizon.com.myapplication.model.MostViewedResponse;
@@ -10,7 +10,6 @@ public interface ApiService {
 
     String API_KEY = "2a416c9d65d344b99257f34654ce8aac";
     String BASE_URL = "https://api.nytimes.com/svc/mostpopular/v2/";
-    String BASE_IMAGE_URL = "https://www.nytimes.com";
 
     @GET("mostviewed/{section}/{time-period}.json")
     Call<MostViewedResponse> getMostView(

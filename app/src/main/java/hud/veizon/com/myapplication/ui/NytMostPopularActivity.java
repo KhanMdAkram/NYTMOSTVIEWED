@@ -1,11 +1,10 @@
-package hud.veizon.com.myapplication;
+package hud.veizon.com.myapplication.ui;
 
 import android.app.ProgressDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.databinding.DataBindingUtil;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -13,26 +12,26 @@ import android.view.MenuItem;
 import java.util.ArrayList;
 import java.util.List;
 
+import hud.veizon.com.myapplication.R;
 import hud.veizon.com.myapplication.databinding.ActivityNytMostPopularBinding;
-import hud.veizon.com.myapplication.model.MostViewedResponse;
 import hud.veizon.com.myapplication.model.Results;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import hud.veizon.com.myapplication.network.GetNytApi;
+import hud.veizon.com.myapplication.presenter.MainPresenter;
 
-public class NytMostPopularActivity extends AppCompatActivity {
+public class NytMostPopularActivity extends AppCompatActivity implements IActivityPresenter {
     ActivityNytMostPopularBinding mBinding;
+    private MainPresenter mPresenter;
     private ProgressDialog mProgressDialog;
     private MostViewAdapter mMostViewedAdapter;
     private List<Results> mResultList = new ArrayList<>();
-    private final String TAG = "NytMostPopularActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_nyt_most_popular);
+        mPresenter = new MainPresenter(this, new GetNytApi());
+        mPresenter.callNytApi();
         setAdapter();
-        callNytApi();
     }
 
     private void setAdapter() {
@@ -51,32 +50,28 @@ public class NytMostPopularActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        callNytApi();
+        mPresenter.onRefresh();
         return true;
     }
 
-    private void callNytApi() {
-        showProgressDialog("Refreshing...");
-        Call<MostViewedResponse> responseCall = ApiServiceSingleton.getInstance().getMostView("all-sections", "7");
-        responseCall.enqueue(new Callback<MostViewedResponse>() {
-            @Override
-            public void onResponse(Call<MostViewedResponse> call, Response<MostViewedResponse> response) {
-                dismissProgressDialog();
-                if (response.body() != null && response.body().getResults() != null) {
-                    mResultList = response.body().getResults();
-                    mMostViewedAdapter.setResultsList(mResultList);
-                } else {
-                    Log.w(TAG, "Error : " + "No Result found");
-                }
-            }
+    @Override
+    public void showProgressBar() {
+        showProgressDialog("Refreshing");
+    }
 
-            @Override
-            public void onFailure(Call<MostViewedResponse> call, Throwable t) {
-                dismissProgressDialog();
-                Log.w(TAG, "Error : " + "No Response");
-                t.printStackTrace();
-            }
-        });
+    @Override
+    public void dismissProgressBar() {
+        dismissProgressDialog();
+    }
+
+    @Override
+    public void setResultData(List<Results> resultsList) {
+        mMostViewedAdapter.setResultsList(resultsList);
+    }
+
+    @Override
+    public void onError(Throwable t) {
+
     }
 
     private void showProgressDialog(String message) {

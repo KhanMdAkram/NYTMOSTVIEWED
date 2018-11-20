@@ -1,4 +1,4 @@
-package hud.veizon.com.myapplication;
+package hud.veizon.com.myapplication.network;
 
 import java.io.IOException;
 

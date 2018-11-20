@@ -1,4 +1,4 @@
-package hud.veizon.com.myapplication;
+package hud.veizon.com.myapplication.ui;
 
 import android.content.Context;
 import android.databinding.DataBindingUtil;
@@ -12,6 +12,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import hud.veizon.com.myapplication.R;
 import hud.veizon.com.myapplication.databinding.MostViewedItemBinding;
 import hud.veizon.com.myapplication.model.Media;
 import hud.veizon.com.myapplication.model.MultiMedia;
