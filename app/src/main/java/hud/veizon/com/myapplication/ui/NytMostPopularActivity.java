@@ -1,13 +1,17 @@
 package hud.veizon.com.myapplication.ui;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.databinding.DataBindingUtil;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +34,11 @@ public class NytMostPopularActivity extends AppCompatActivity implements IActivi
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_nyt_most_popular);
         mPresenter = new MainPresenter(this, new GetNytApi());
-        mPresenter.callNytApi();
+        if (isNetworkAvailable()) {
+            mPresenter.callNytApi();
+        } else {
+            Toast.makeText(this, "No Internet", Toast.LENGTH_SHORT).show();
+        }
         setAdapter();
     }
 
@@ -50,7 +58,11 @@ public class NytMostPopularActivity extends AppCompatActivity implements IActivi
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        mPresenter.onRefresh();
+        if (isNetworkAvailable()) {
+            mPresenter.onRefresh();
+        } else {
+            Toast.makeText(this, "No Internet", Toast.LENGTH_SHORT).show();
+        }
         return true;
     }
 
@@ -71,7 +83,14 @@ public class NytMostPopularActivity extends AppCompatActivity implements IActivi
 
     @Override
     public void onError(Throwable t) {
+        Toast.makeText(this, "SomeThing Went Wrong", Toast.LENGTH_SHORT).show();
+    }
 
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
     }
 
     private void showProgressDialog(String message) {

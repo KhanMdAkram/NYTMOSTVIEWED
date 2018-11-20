@@ -15,7 +15,8 @@ public class ApiServiceSingleton {
 
     private static ApiService mInstance = null;
 
-    private ApiServiceSingleton() {};
+    private ApiServiceSingleton() {
+    }
 
     public static ApiService getInstance() {
         if (mInstance == null) {
@@ -41,15 +42,14 @@ public class ApiServiceSingleton {
 
                 // Request customization: add request headers
                 Request.Builder requestBuilder = original.newBuilder()
-                        .url(url)
-                        .header("Content-Type", "application/json");
+                        .url(url);
 
                 Request request = requestBuilder.build();
                 return chain.proceed(request);
             }
         });
         builder.addInterceptor(interceptor);
-        OkHttpClient client =  builder.build();
+        OkHttpClient client = builder.build();
 
 
         return new Retrofit.Builder()
