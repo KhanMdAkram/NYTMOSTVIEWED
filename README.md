@@ -20,6 +20,9 @@
      2.) Open Android Studio and import the project.<br/>
      3.)Build the project and run it.<br/>
      4.) Happy Coding.<br/>
+     
+     #Note : Need to register @ https://developer.nytimes.com and get API key .<br/>
+     for more help : https://developer.nytimes.com/get-started <br/>
  
  
  
