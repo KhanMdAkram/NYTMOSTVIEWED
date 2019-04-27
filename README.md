@@ -2,6 +2,9 @@
  User can see a list of most viewed articles published on New York Times in the past 7 days.<br/>
  Click on refresh icon on top right corner to getb the latest New York Times most viewed articles .<br/>
  
+ Using RX Java and Retrofit library for Network call and better manaing the api call.<br/>
+ Using Mutable Live Data and observer to update the UI from Model.
+ 
  Checking for Internet connectivity and handling error cases.
  Code design using MVP.
  
