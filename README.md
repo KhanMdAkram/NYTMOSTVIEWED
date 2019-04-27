@@ -9,7 +9,8 @@
  Code design using MVP.
  
  #Open Source Libraries Used :<br/>
-   Retrofit<br/>
+   Retrofit 2<br/>
+   RxJava 2<br/>
    Gson<br/>
    Picasso<br/>
    
