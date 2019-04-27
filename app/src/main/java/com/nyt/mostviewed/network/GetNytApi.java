@@ -11,7 +11,6 @@ import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 
 /**
@@ -82,25 +81,6 @@ public class GetNytApi implements INetworkPresenter {
         };
 
     }
-
-//    public Observer<MostViewedResponse> getObserver() {
-//        return new Observer<MostViewedResponse>() {
-//            @Override
-//            public void onNext(MostViewedResponse mostViewedResponse) {
-//
-//            }
-//
-//            @Override
-//            public void onError(Throwable e) {
-//                mResponseLiveData.setValue(null);
-//            }
-//
-//            @Override
-//            public void onComplete() {
-//
-//            }
-//        };
-//    }
 
 
 }
