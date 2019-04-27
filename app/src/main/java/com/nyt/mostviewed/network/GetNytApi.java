@@ -8,7 +8,9 @@ import com.nyt.mostviewed.model.Results;
 import java.util.List;
 
 import io.reactivex.Observable;
+import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 
@@ -54,8 +56,13 @@ public class GetNytApi implements INetworkPresenter {
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
-    public DisposableObserver<MostViewedResponse> getObserver() {
-        return new DisposableObserver<MostViewedResponse>() {
+    public Observer<MostViewedResponse> getObserver() {
+        return new Observer<MostViewedResponse>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
             @Override
             public void onNext(MostViewedResponse mostViewedResponse) {
                 if (mostViewedResponse.getResults() != null) {
@@ -73,7 +80,27 @@ public class GetNytApi implements INetworkPresenter {
 
             }
         };
+
     }
+
+//    public Observer<MostViewedResponse> getObserver() {
+//        return new Observer<MostViewedResponse>() {
+//            @Override
+//            public void onNext(MostViewedResponse mostViewedResponse) {
+//
+//            }
+//
+//            @Override
+//            public void onError(Throwable e) {
+//                mResponseLiveData.setValue(null);
+//            }
+//
+//            @Override
+//            public void onComplete() {
+//
+//            }
+//        };
+//    }
 
 
 }
