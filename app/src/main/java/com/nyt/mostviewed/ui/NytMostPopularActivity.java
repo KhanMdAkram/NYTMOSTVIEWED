@@ -1,11 +1,13 @@
 package com.nyt.mostviewed.ui;
 
 import android.app.ProgressDialog;
+import android.arch.lifecycle.Observer;
 import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.Menu;
@@ -36,10 +38,12 @@ public class NytMostPopularActivity extends AppCompatActivity implements IActivi
         mPresenter = new MainPresenter(this, new GetNytApi());
         if (isNetworkAvailable()) {
             mPresenter.callNytApi();
+            observeApiResponse();
         } else {
             Toast.makeText(this, "No Internet", Toast.LENGTH_SHORT).show();
         }
         setAdapter();
+
     }
 
     private void setAdapter() {
@@ -47,6 +51,18 @@ public class NytMostPopularActivity extends AppCompatActivity implements IActivi
         mBinding.recyclerViews.setLayoutManager(linearLayoutManager);
         mMostViewedAdapter = new MostViewAdapter(this, mResultList);
         mBinding.recyclerViews.setAdapter(mMostViewedAdapter);
+    }
+
+    private void observeApiResponse() {
+        mPresenter.getApiResponse().observe(this, new Observer<List<Results>>() {
+            @Override
+            public void onChanged(@Nullable List<Results> results) {
+                dismissProgressBar();
+                if (results != null) {
+                    setResultData(results);
+                }
+            }
+        });
     }
 
     @Override
@@ -79,7 +95,6 @@ public class NytMostPopularActivity extends AppCompatActivity implements IActivi
     @Override
     public void setResultData(List<Results> resultsList) {
         mMostViewedAdapter.setResultsList(resultsList);
-        mBinding.recyclerViews.smoothScrollToPosition(0);
     }
 
     @Override

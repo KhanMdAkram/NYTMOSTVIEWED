@@ -9,6 +9,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiServiceSingleton {
@@ -37,7 +38,7 @@ public class ApiServiceSingleton {
                 HttpUrl originalHttpUrl = original.url();
 
                 HttpUrl url = originalHttpUrl.newBuilder()
-                        .addQueryParameter("apikey", ApiService.API_KEY)
+                        .addQueryParameter("api-key", ApiService.API_KEY)
                         .build();
 
                 // Request customization: add request headers
@@ -56,6 +57,7 @@ public class ApiServiceSingleton {
                 .baseUrl(ApiService.BASE_URL)
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
     }
 

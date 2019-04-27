@@ -1,10 +1,16 @@
 package com.nyt.mostviewed.network;
 
-import com.nyt.mostviewed.model.MostViewedResponse;
+import android.arch.lifecycle.MutableLiveData;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import com.nyt.mostviewed.model.MostViewedResponse;
+import com.nyt.mostviewed.model.Results;
+
+import java.util.List;
+
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.observers.DisposableObserver;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by akram on 20/11/18.
@@ -12,6 +18,9 @@ import retrofit2.Response;
 
 public class GetNytApi implements INetworkPresenter {
 
+    private MutableLiveData<List<Results>> mResponseLiveData = new MutableLiveData<>();
+
+    /*without using RX JAVA
     @Override
     public void callNytMostPopularApi(final OnFinishedListener onFinishedListener) {
         Call<MostViewedResponse> responseCall = ApiServiceSingleton.getInstance().getMostView("all-sections", "7");
@@ -26,5 +35,45 @@ public class GetNytApi implements INetworkPresenter {
                 onFinishedListener.onFailure(t);
             }
         });
+    }*/
+
+    @Override
+    public MutableLiveData<List<Results>> getApiResponse() {
+        return mResponseLiveData;
     }
+
+    @Override
+    public void callNytMostPopularApi() {
+        getObservable().subscribeWith(getObserver());
+    }
+
+    public Observable<MostViewedResponse> getObservable() {
+        return ApiServiceSingleton.getInstance()
+                .getMostView("all-sections", "7")
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    public DisposableObserver<MostViewedResponse> getObserver() {
+        return new DisposableObserver<MostViewedResponse>() {
+            @Override
+            public void onNext(MostViewedResponse mostViewedResponse) {
+                if (mostViewedResponse.getResults() != null) {
+                    mResponseLiveData.setValue(mostViewedResponse.getResults());
+                }
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                mResponseLiveData.setValue(null);
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        };
+    }
+
+
 }

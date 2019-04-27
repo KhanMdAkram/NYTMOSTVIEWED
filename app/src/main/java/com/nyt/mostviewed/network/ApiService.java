@@ -3,17 +3,18 @@ package com.nyt.mostviewed.network;
 
 import com.nyt.mostviewed.model.MostViewedResponse;
 
+import io.reactivex.Observable;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 public interface ApiService {
 
-    String API_KEY = "2a416c9d65d344b99257f34654ce8aac";
+    String API_KEY = "azlAocLMRQkSJBM1eNb4zDrw4niej2pj";
     String BASE_URL = "https://api.nytimes.com/svc/mostpopular/v2/";
 
     @GET("mostviewed/{section}/{time-period}.json")
-    Call<MostViewedResponse> getMostView(
+    Observable<MostViewedResponse> getMostView(
             @Path("section") String section,
             @Path("time-period") String timeperiod);
 }
